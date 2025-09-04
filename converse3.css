@@ -1,0 +1,357 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    font-size: 14px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .country {
+    font-weight: bold;
+    color: red;
+  }
+  
+  .promo {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .menu a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .menu a:hover {
+    text-decoration: underline;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #d7c2ad;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .logo .star {
+    font-size: 18px;
+  }
+  
+  .icons a {
+    margin-left: 15px;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+  }
+  :root{
+    --bg: #f5f7fb;
+    --text: #0f0f10;
+    --muted: #555;
+    --btn-bg: #0f0f10;
+    --btn-text: #fff;
+    --btn-bg-hover: #222;
+  }
+  
+  *{ box-sizing: border-box; }
+  
+  html, body{
+    margin: 0;
+    padding: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+  }
+  
+  .hero{
+    display: grid;
+    grid-template-columns: 1.1fr 1fr; /* gambar sedikit lebih lebar */
+    align-items: center;
+    gap: clamp(16px, 3vw, 40px);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(16px, 4vw, 48px);
+    min-height: 70vh;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  }
+  
+  /* Media (gambar) */
+  .hero__media{
+    position: relative;
+    isolation: isolate;
+  }
+  .hero__media::after{
+    content:"";
+    position:absolute;
+    inset:auto 0 -10% 0;
+    height: 18%;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.06));
+    filter: blur(8px);
+    z-index:-1;
+  }
+  .hero__media img{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+  
+  /* Konten */
+  .hero__content{
+    text-align: left;
+  }
+  
+  .hero__title{
+    margin: 0 0 10px;
+    line-height: 1.05;
+    font-weight: 800;
+    font-size: clamp(28px, 4.4vw, 56px);
+    letter-spacing: .5px;
+  }
+  
+  .hero__subtitle{
+    margin: 0 0 24px;
+    font-size: clamp(14px, 1.6vw, 18px);
+    color: var(--muted);
+  }
+  
+  /* Tombol */
+  .btn{
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 12px;
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform .12s ease, background .2s ease;
+    box-shadow: 0 8px 16px rgba(0,0,0,.12);
+  }
+  .btn:hover{ background: var(--btn-bg-hover); transform: translateY(-1px); }
+  .btn:active{ transform: translateY(0); }
+  
+  
+  @media (max-width: 820px){
+    .hero{
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .hero__content{ text-align: center; }
+    .hero__title{ font-size: clamp(28px, 8vw, 44px); }
+  }
+  
+  /* Preferensi aksesibilitas: kurangi animasi */
+  @media (prefers-reduced-motion: reduce){
+    .btn{ transition: none; }
+  }
+  /* styles.css */
+:root{
+    --bg:#cfeeff; /* latar biru muda */
+    --card-bg:#ffffff;
+    --gap:28px;
+    --radius:18px;
+    --max-width:720px;
+  }
+  
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background:var(--bg);
+    color:#222;
+    -webkit-font-smoothing:antialiased;
+  }
+  
+  .page{
+    max-width:var(--max-width);
+    margin:24px auto;
+    padding:28px 22px;
+  }
+  
+  .title{
+    text-align:center;
+    margin:6px 0 2px;
+    font-size:20px;
+    font-weight:700;
+  }
+  
+  .subtitle{
+    text-align:center;
+    margin:0 0 18px;
+    color:#333;opacity:0.75;font-size:13px
+  }
+  
+  .section{
+    margin:14px 0 28px;
+  }
+  
+  .section__title{
+    text-align:center;
+    margin:6px 0 14px;
+    font-weight:700;
+    font-size:16px;
+  }
+  
+  .grid{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:var(--gap);
+  }
+  
+  .card{
+    background:linear-gradient(#fff,#fff);
+    border-radius:var(--radius);
+    padding:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    min-height:110px;
+  }
+  
+  .card img{
+    max-width:90%;
+    max-height:80px;
+    object-fit:contain;
+    display:block;
+  }
+  
+  .page__footer{
+    text-align:center;
+    font-size:13px;
+    color:#333;opacity:0.7;
+    margin-top:8px;
+  }
+  
+  /* Responsif: lebih sedikit kolom di layar kecil */
+  @media (max-width:880px){
+    .grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:620px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:380px){
+    .grid{grid-template-columns:1fr}
+  }
+  /* ====== HOW TO STYLE YOUR RST ====== */
+.style-rst {
+  background: #bde2f4; /* biru muda */
+  padding: 40px 20px;
+}
+
+.style-rst h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.style-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.style-gallery img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.style-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive untuk HP */
+@media (max-width: 768px) {
+  .style-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .style-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FOOTER */
+/* footer {
+  background: rgba(217, 196, 176, 1);
+  padding: 40px 20px;
+  width: 100%;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+}
+.footer-grid ul {
+  list-style: none;
+}
+.footer-grid li {
+  margin-bottom: 20px;
+} */
+
+/* Reset default */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Footer style */
+.footer {
+  background-color: #d2b48c; /* warna coklat muda seperti gambar */
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 5000px;
+}
+
+.footer-col h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  color: #222;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.footer-col ul li:hover {
+  text-decoration: underline;
+}
